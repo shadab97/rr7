@@ -4,11 +4,14 @@ test("has title", async ({ page }) => {
   // ad automated test for playwright
 
   // Go to the Playwright homepage
-
-  await page.goto("http://localhost:5173/");
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Router App/);
+  const KEY = "123";
+  if (process.env.KEY === KEY) {
+    await page.goto("http://localhost:5173/");
+    // Expect a title "to contain" a substring.
+    await expect(page).toHaveTitle(/Router App/);
+  } else {
+    expect(2).toBe(3);
+  }
 });
 
 test("get started link", async ({ page }) => {
