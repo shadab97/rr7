@@ -5,10 +5,10 @@ test("has title", async ({ page }) => {
 
   // Go to the Playwright homepage
 
-  await page.goto("https://playwright.dev/");
+  await page.goto("http://localhost:5173/");
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await expect(page).toHaveTitle(/Router App/);
 });
 
 test("get started link", async ({ page }) => {
